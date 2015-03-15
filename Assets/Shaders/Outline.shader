@@ -15,7 +15,7 @@ Shader "Custom/Outline" {
 		_SpecColor ("Specular Color", Color) = (0.5, 0.5, 0.5, 1)
 		_Shininess ("Shininess", Range (0.03, 1)) = 0.078125
 		_OutlineColor ("Outline Color", Color) = (0,1,1,1)
-		_OutlineWidth ("Outline width", Range (0.0, 0.03)) = .005
+		_OutlineWidth ("Outline Width", Range (0.0, 0.03)) = .005
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_BumpMap ("Normalmap", 2D) = "bump" {}
 	}

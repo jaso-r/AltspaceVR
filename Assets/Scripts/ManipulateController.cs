@@ -71,7 +71,7 @@ public class ManipulateController : MonoBehaviour
 				ManipulateObject mo = c.GetComponent<ManipulateObject> ();
 				if (mo != null)
 				{
-					Vector3 viewPos = mainCamera.camera.WorldToViewportPoint(c.transform.position);
+					Vector3 viewPos = mainCamera.GetComponent<Camera>().WorldToViewportPoint(c.transform.position);
 					viewPos.z = 0.0f;
 					if (viewPos.x >= selectionLowExtentX && viewPos.x <= 1.0 - selectionLowExtentX && viewPos.y >= selectionLowExtentY && viewPos.y <= 1.0 - selectionLowExtentY)
 					{
@@ -139,7 +139,7 @@ public class ManipulateController : MonoBehaviour
 			Vector3 holdPosition = mainCamera.transform.position + (manipulateObject.viewDistance * mainCamera.transform.forward);
 			if (!inspect)
 				holdPosition += new Vector3(0.0f, -manipulateObject.dropDistance, 0.0f);
-			manipulateObject.rigidbody.transform.position = Vector3.Lerp(manipulateObject.rigidbody.transform.position, holdPosition, Time.deltaTime * manipulateObject.smooth);
+			manipulateObject.GetComponent<Rigidbody>().transform.position = Vector3.Lerp(manipulateObject.GetComponent<Rigidbody>().transform.position, holdPosition, Time.deltaTime * manipulateObject.smooth);
 		}
 	}
 
@@ -152,8 +152,8 @@ public class ManipulateController : MonoBehaviour
 		{
 			Vector3 camLocalX = Vector3.Cross(mainCamera.transform.forward, Vector3.up).normalized;
 			Vector3 camLocalY = Vector3.Cross(camLocalX, mainCamera.transform.forward).normalized;
-			manipulateObject.rigidbody.transform.Rotate(camLocalX, rotateX, Space.World);
-			manipulateObject.rigidbody.transform.Rotate(camLocalY, rotateY, Space.World);
+			manipulateObject.GetComponent<Rigidbody>().transform.Rotate(camLocalX, rotateX, Space.World);
+			manipulateObject.GetComponent<Rigidbody>().transform.Rotate(camLocalY, rotateY, Space.World);
 		}
 	}
 }

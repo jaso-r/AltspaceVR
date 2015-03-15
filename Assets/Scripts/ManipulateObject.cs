@@ -46,13 +46,13 @@ public class ManipulateObject : MonoBehaviour
 	{
 		if (manip)
 		{
-			this.gameObject.rigidbody.isKinematic = true;
-			this.gameObject.rigidbody.detectCollisions = false;
+			this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+			this.gameObject.GetComponent<Rigidbody>().detectCollisions = false;
 		}
 		else
 		{
-			this.gameObject.rigidbody.isKinematic = false;
-			this.gameObject.rigidbody.detectCollisions = true;
+			this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+			this.gameObject.GetComponent<Rigidbody>().detectCollisions = true;
 		}
 	}
 
@@ -61,13 +61,13 @@ public class ManipulateObject : MonoBehaviour
 	{
 		if (hweight > 0.1f)
 		{
-			this.renderer.material.SetColor("_OutlineColor", new Color (0.0f, hweight, hweight, hweight));
-			this.renderer.material.SetFloat("_OutlineWidth", hweight * 0.025f);
+			this.GetComponent<Renderer>().material.SetColor("_OutlineColor", new Color (0.0f, hweight, hweight, hweight));
+			this.GetComponent<Renderer>().material.SetFloat("_OutlineWidth", hweight * 0.005f);
 		}
 		else
 		{
-			this.renderer.material.SetColor("_OutlineColor", new Color (0.0f, 0.0f, 0.0f, 0.0f));
-			this.renderer.material.SetFloat("_OutlineWidth", 0.0f);
+			this.GetComponent<Renderer>().material.SetColor("_OutlineColor", new Color (0.0f, 0.0f, 0.0f, 0.0f));
+			this.GetComponent<Renderer>().material.SetFloat("_OutlineWidth", 0.0f);
 		}
 	}
 }

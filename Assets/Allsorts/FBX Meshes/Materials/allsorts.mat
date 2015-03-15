@@ -2,13 +2,14 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: allsorts
   m_Shader: {fileID: 4800000, guid: 186020fb762442545819da44327a3947, type: 3}
-  m_ShaderKeywords: []
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
@@ -42,7 +43,7 @@ Material:
       data:
         first:
           name: _OutlineWidth
-        second: .00446428545
+        second: .00260000001
       data:
         first:
           name: _EmissionLM
